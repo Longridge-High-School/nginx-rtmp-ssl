@@ -21,6 +21,7 @@ Mount a folder to `/var/ssl` that contains `cert.crt` the PEM certificate, `cert
 |:-------|:-----:|:-------|
 |`SERVER_NAME`|_none, required_|Sets the `server_name` of the http server in nginx for example `rtmp.exmaple.com`.|
 |`DASH_PLAYLIST_LENGTH`|`30s`|Sets the playlist length for dash, a lower value reduces delay but requires a faster client connection.|
+|`WORKER_PROCESSES`|`1`|Sets the number of nginx worker processes.|
 
 ## Docker Compose
 
