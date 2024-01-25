@@ -12,7 +12,7 @@ Create a `docker-compose.yml` with this content:
 version: '3.9'
 services:
   db:
-    image: longridgehighschool\nginx-rtmp-ssl:latest
+    image: longridgehighschool/nginx-rtmp-ssl:latest
     restart: always
     environment:
       SERVER_NAME: rtmp.example.com

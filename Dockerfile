@@ -61,6 +61,10 @@ COPY --from=0 /tmp/nginx-rtmp-module/* /opt/nginx/conf/
 RUN mkdir -p /run
 ADD build.sh /run/build.sh
 ADD run.sh /run/run.sh
+
+RUN chmod +x /run/run.sh
+RUN chmod +x /run/build.sh
+
 ADD nginx/stream.conf /run/stream.conf
 ADD nginx/nginx.conf /opt/nginx/conf/nginx.conf
 
