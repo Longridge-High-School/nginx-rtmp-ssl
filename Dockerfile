@@ -68,6 +68,9 @@ RUN chmod +x /run/build.sh
 ADD nginx/stream.conf /run/stream.conf
 ADD nginx/nginx.conf /opt/nginx/conf/nginx.conf
 
+RUN mkdir -p /tmp/hls
+RUN mkdir -p /tmp/dash
+
 EXPOSE 1935
 EXPOSE 443
 

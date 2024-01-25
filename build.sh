@@ -34,8 +34,6 @@ do
 
   echo Creating stream $STREAM_NAME
 
-  mkdir -p /tmp/$STREAM_NAME
-
   sed "s/_STREAM_NAME_/$STREAM_NAME/" /run/stream.conf > "$STREAMS_DIR$STREAM_NAME.conf"
 
 done
