@@ -1,6 +1,6 @@
 # Nginx RTMP SSL
 
-A docker container based on the [original by mvgorcum](https://github.com/mvgorcum/docker-nginx-ts). Improved config generation and support for SSL for the stream urls.
+A docker container based on the [original by mvgorcum](https://github.com/mvgorcum/docker-nginx-ts) for ingesting RTMP streams and providing streams to clients. Improved config generation and support for SSL for the stream urls.
 
 # Usage
 
@@ -22,7 +22,7 @@ Mount a folder to `/var/ssl` that contains `cert.crt` the PEM certificate, `cert
 |`SERVER_NAME`|_none, required_|Sets the `server_name` of the http server in nginx for example `rtmp.exmaple.com`.|
 |`DASH_PLAYLIST_LENGTH`|`30s`|Sets the playlist length for dash, a lower value reduces delay but requires a faster client connection.|
 |`WORKER_PROCESSES`|`1`|Sets the number of nginx worker processes.|
-|`RTMP_STREAM_NAMES`|`live,testing`|A comma seperated list of stream names|
+|`RTMP_STREAM_NAMES`|`live,testing`|A comma seperated list of stream names.|
 
 ## Docker Compose
 
