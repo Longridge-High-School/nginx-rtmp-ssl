@@ -22,6 +22,7 @@ Mount a folder to `/var/ssl` that contains `cert.crt` the PEM certificate, `cert
 |`SERVER_NAME`|_none, required_|Sets the `server_name` of the http server in nginx for example `rtmp.exmaple.com`.|
 |`DASH_PLAYLIST_LENGTH`|`30s`|Sets the playlist length for dash, a lower value reduces delay but requires a faster client connection.|
 |`WORKER_PROCESSES`|`1`|Sets the number of nginx worker processes.|
+|`RTMP_STREAM_NAMES`|`live,testing`|A comma seperated list of stream names|
 
 ## Docker Compose
 
@@ -41,3 +42,15 @@ services:
       - '1935:1935'
       - '8443:443'
 ```
+
+## OBS
+
+Set your stream to custom with a server of `rtmp://rtmp.example.com/live` where `rtmp.example.com` is your `SERVER_NAME` and `live` is one of your `RTMP_STREAM_NAMES`. The Stream Key can be anything you want, clients just need to know what it is.
+
+## Veiwing the stream
+
+You can then use any streaming player to view the streams using these URLs:
+
+ - `rtmp://<your hostname>/<your stream name>/<your stream key>`
+ - `https://<your hostname>/dash/<your stream name>/<your stream key>.mpd`
+ - `https://<your hostname>/hls/<your stream name>/<your stream key>.m3u8`
