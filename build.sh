@@ -22,21 +22,21 @@ mkdir -p ${STREAMS_DIR}
 
 # Create Snippets
 
-echo "worker_connections ${RTMP_CONNECTIONS};" >> ${SNIPPETS_DIR}worker_connections.txt
+echo "worker_connections ${RTMP_CONNECTIONS};" > ${SNIPPETS_DIR}worker_connections.txt
 
-echo "server_name ${SERVER_NAME};" >> ${SNIPPETS_DIR}server_name.txt
+echo "server_name ${SERVER_NAME};" > ${SNIPPETS_DIR}server_name.txt
 
-echo "worker_processes ${WORKER_PROCESSES};" >> ${SNIPPETS_DIR}worker_processes.txt
+echo "worker_processes ${WORKER_PROCESSES};" > ${SNIPPETS_DIR}worker_processes.txt
 
 # Create URLS Block
 
-echo "" >> "${SNIPPETS_DIR}urls.txt"
+echo "" > "${SNIPPETS_DIR}urls.txt"
 
 if [ "x${RTMP_CONNECT_URLS}" != "x" ]; then
   for CONNECT_URL in $(echo ${RTMP_CONNECT_URLS}); do
     echo "Creating Connect URL ${CONNECT_URL}"
 
-    echo "on_connect ${CONNECT_URL};" > "${SNIPPETS_DIR}urls.txt"
+    echo "on_connect ${CONNECT_URL};" >> "${SNIPPETS_DIR}urls.txt"
   done
 fi
 
@@ -44,7 +44,7 @@ if [ "x${RTMP_PLAY_URLS}" != "x" ]; then
   for PLAY_URL in $(echo ${RTMP_PLAY_URLS}); do
     echo "Creating Play URL ${PLAY_URL}"
 
-    echo "on_play ${PLAY_URL};" > "${SNIPPETS_DIR}urls.txt"
+    echo "on_play ${PLAY_URL};" >> "${SNIPPETS_DIR}urls.txt"
   done
 fi
 
@@ -52,7 +52,7 @@ if [ "x${RTMP_PUBLISH_URLS}" != "x" ]; then
   for PUBLISH_URL in $(echo ${RTMP_PUBLISH_URLS}); do
     echo "Creating Publish URL ${PUBLISH_URL}"
 
-    echo "on_publish ${PUBLISH_URL};" > "${SNIPPETS_DIR}urls.txt"
+    echo "on_publish ${PUBLISH_URL};" >> "${SNIPPETS_DIR}urls.txt"
   done
 fi
 
@@ -60,7 +60,7 @@ if [ "x${RTMP_DONE_URLS}" != "x" ]; then
   for DONE_URL in $(echo ${RTMP_DONE_URLS}); do
     echo "Creating Done URL ${DONE_URL}"
 
-    echo "on_done ${DONE_URL};" > "${SNIPPETS_DIR}urls.txt"
+    echo "on_done ${DONE_URL};" >> "${SNIPPETS_DIR}urls.txt"
   done
 fi
 
