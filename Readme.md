@@ -25,6 +25,7 @@ Mount a folder to `/var/ssl` that contains `cert.crt` the PEM certificate, `cert
 |`RTMP_STREAM_NAMES`|`live,testing`|A comma seperated list of stream names.|
 |`RTMP_CONNECT_URLS`|``|A comma seperated list of connect URLS.|
 |`RTMP_PLAY_URLS`|``|A comma seperated list of play URLS.|
+|`RTMP_PUBLISH_URLS`|``|A comma seperated list of publish URLS.|
 |`RTMP_DONE_URLS`|``|A comma seperated list of done URLS.|
 
 

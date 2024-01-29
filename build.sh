@@ -9,6 +9,7 @@ RTMP_STREAM_NAMES=${RTMP_STREAM_NAMES-live,testing}
 RTMP_STREAMS=$(echo ${RTMP_STREAM_NAMES} | sed "s/,/\n/g")
 RTMP_CONNECT_URLS=$(echo ${RTMP_CONNECT_URLS} | sed "s/,/\n/g")
 RTMP_PLAY_URLS=$(echo ${RTMP_PLAY_URLS} | sed "s/,/\n/g")
+RTMP_PUBLISH_URLS=$(echo ${RTMP_PUBLISH_URLS} | sed "s/,/\n/g")
 RTMP_DONE_URLS=$(echo ${RTMP_DONE_URLS} | sed "s/,/\n/g")
 DASH_PLAYLIST_LENGTH=${DASH_PLAYLIST_LENGTH-30s}
 WORKER_PROCESSES=${WORKER_PROCESSES-1}
@@ -44,6 +45,14 @@ if [ "x${RTMP_PLAY_URLS}" != "x" ]; then
     echo "Creating Play URL ${PLAY_URL}"
 
     echo "on_play ${PLAY_URL};" > "${SNIPPETS_DIR}urls.txt"
+  done
+fi
+
+if [ "x${RTMP_PUBLISH_URLS}" != "x" ]; then
+  for PUBLISH_URL in $(echo ${RTMP_PUBLISH_URLS}); do
+    echo "Creating Publish URL ${PUBLISH_URL}"
+
+    echo "on_publish ${PUBLISH_URL};" > "${SNIPPETS_DIR}urls.txt"
   done
 fi
 
