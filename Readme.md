@@ -23,6 +23,10 @@ Mount a folder to `/var/ssl` that contains `cert.crt` the PEM certificate, `cert
 |`DASH_PLAYLIST_LENGTH`|`30s`|Sets the playlist length for dash, a lower value reduces delay but requires a faster client connection.|
 |`WORKER_PROCESSES`|`1`|Sets the number of nginx worker processes.|
 |`RTMP_STREAM_NAMES`|`live,testing`|A comma seperated list of stream names.|
+|`RTMP_CONNECT_URLS`|``|A comma seperated list of connect URLS.|
+|`RTMP_PLAY_URLS`|``|A comma seperated list of play URLS.|
+|`RTMP_DONE_URLS`|``|A comma seperated list of done URLS.|
+
 
 ## Docker Compose
 
